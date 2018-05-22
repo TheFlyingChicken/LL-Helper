@@ -60,18 +60,42 @@
 		5563795220B45C5F009753F1 /* LL-helper */ = {
 			isa = PBXGroup;
 			children = (
-				5563795320B45C5F009753F1 /* AppDelegate.h */,
-				5563795420B45C5F009753F1 /* AppDelegate.m */,
-				5563795620B45C5F009753F1 /* ViewController.h */,
-				5563795720B45C5F009753F1 /* ViewController.m */,
 				5563795920B45C5F009753F1 /* Main.storyboard */,
+				5563796E20B45DA6009753F1 /* c */,
+				5563796D20B45D93009753F1 /* delegate */,
+				5563796C20B45D65009753F1 /* others */,
+			);
+			path = "LL-helper";
+			sourceTree = "<group>";
+		};
+		5563796C20B45D65009753F1 /* others */ = {
+			isa = PBXGroup;
+			children = (
 				5563795F20B45C5F009753F1 /* Assets.xcassets */,
 				5563796120B45C5F009753F1 /* LaunchScreen.storyboard */,
 				5563796420B45C5F009753F1 /* Info.plist */,
 				5563796520B45C5F009753F1 /* main.m */,
 				5563795C20B45C5F009753F1 /* LL_helper.xcdatamodeld */,
 			);
-			path = "LL-helper";
+			path = others;
+			sourceTree = "<group>";
+		};
+		5563796D20B45D93009753F1 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				5563795320B45C5F009753F1 /* AppDelegate.h */,
+				5563795420B45C5F009753F1 /* AppDelegate.m */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		5563796E20B45DA6009753F1 /* c */ = {
+			isa = PBXGroup;
+			children = (
+				5563795620B45C5F009753F1 /* ViewController.h */,
+				5563795720B45C5F009753F1 /* ViewController.m */,
+			);
+			path = c;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
