@@ -13,7 +13,7 @@
 #import "CategoryManager.h"
 
 @interface ViewController ()
-@property (assign, nonatomic) CGFloat iconHeight;
+@property (assign, nonatomic) CGFloat topMargin;
 @end
 
 @implementation ViewController
@@ -21,11 +21,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    [self addIconLine1];
-    [self addIconLine2];
+    [self iconLine1];
+    [self iconLine2];
+    [self uploadButton];
 }
 
-- (void)addIconLine1 {
+- (void)showUploadView {
+    UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadViewController"];
+    [self presentViewController:vc animated:true completion:nil];
+}
+
+- (void)uploadButton {
+    UIButton* upload = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:upload];
+    
+    [upload mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-50);
+        make.size.mas_equalTo(CGSizeMake(130, 40));
+    }];
+    [self.view layoutIfNeeded];
+    
+    [upload setTitle:@"上传新品" forState:UIControlStateNormal];
+    [upload setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    upload.backgroundColor = [UIColor whiteColor];
+    upload.layer.masksToBounds = true;
+    upload.layer.cornerRadius = upload.frame.size.height/2;
+    upload.layer.borderColor = [UIColor colorWithWhite:0.5 alpha:0.8].CGColor;
+    upload.layer.borderWidth = 0.8;
+    [upload addTarget:self action:@selector(showUploadView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)iconLine1 {
     NSArray* list = [CategoryManager categoryLine1];
     NSArray* array = [self getGategoryViews:list];
     
@@ -35,17 +62,20 @@
     }];
     [self.view layoutIfNeeded];
     UIView* view = [array firstObject];
-    _iconHeight = view.frame.size.height;
+    _topMargin = view.frame.size.height + 60;
 }
 
-- (void)addIconLine2 {
+- (void)iconLine2 {
     NSArray* list = [CategoryManager categoryLine2];
     NSArray* array = [self getGategoryViews:list];
 
     [array mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:8 leadSpacing:8 tailSpacing:8];
     [array mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(_iconHeight+60);
+        make.top.equalTo(self.view.mas_top).with.offset(_topMargin);
     }];
+    [self.view layoutIfNeeded];
+    UIView* view = [array firstObject];
+    _topMargin += view.frame.size.height;
 }
 
 - (NSArray*)getGategoryViews: (NSArray*)list{

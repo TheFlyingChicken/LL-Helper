@@ -11,6 +11,8 @@
 		552D55EE20B4FFC200642DF9 /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55ED20B4FFC200642DF9 /* CategoryView.m */; };
 		552D55F220B5052600642DF9 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55F120B5052600642DF9 /* Category.m */; };
 		552D55F620B5451C00642DF9 /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55F520B5451C00642DF9 /* CategoryManager.m */; };
+		552D55F920B54D8100642DF9 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55F820B54D8000642DF9 /* UploadViewController.m */; };
+		552D55FE20B659AC00642DF9 /* AutoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55FD20B659AC00642DF9 /* AutoTextView.m */; };
 		5563795520B45C5F009753F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563795420B45C5F009753F1 /* AppDelegate.m */; };
 		5563795820B45C5F009753F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563795720B45C5F009753F1 /* ViewController.m */; };
 		5563795B20B45C5F009753F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5563795920B45C5F009753F1 /* Main.storyboard */; };
@@ -29,6 +31,10 @@
 		552D55F120B5052600642DF9 /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		552D55F420B5451C00642DF9 /* CategoryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryManager.h; sourceTree = "<group>"; };
 		552D55F520B5451C00642DF9 /* CategoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
+		552D55F720B54D8000642DF9 /* UploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
+		552D55F820B54D8000642DF9 /* UploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadViewController.m; sourceTree = "<group>"; };
+		552D55FC20B659AC00642DF9 /* AutoTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoTextView.h; sourceTree = "<group>"; };
+		552D55FD20B659AC00642DF9 /* AutoTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoTextView.m; sourceTree = "<group>"; };
 		5563795020B45C5F009753F1 /* LL-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LL-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5563795320B45C5F009753F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5563795420B45C5F009753F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +91,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		552D55FB20B6591B00642DF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				552D55FC20B659AC00642DF9 /* AutoTextView.h */,
+				552D55FD20B659AC00642DF9 /* AutoTextView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5563794720B45C5F009753F1 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +124,7 @@
 				5563795920B45C5F009753F1 /* Main.storyboard */,
 				5563796420B45C5F009753F1 /* Info.plist */,
 				552D55F320B544B800642DF9 /* Manager */,
+				552D55FB20B6591B00642DF9 /* View */,
 				552D55EF20B5050C00642DF9 /* Model */,
 				5563796E20B45DA6009753F1 /* Controller */,
 				5563796D20B45D93009753F1 /* Delegate */,
@@ -143,6 +159,8 @@
 			children = (
 				5563795620B45C5F009753F1 /* ViewController.h */,
 				5563795720B45C5F009753F1 /* ViewController.m */,
+				552D55F720B54D8000642DF9 /* UploadViewController.h */,
+				552D55F820B54D8000642DF9 /* UploadViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,9 +292,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LL-helper/Pods-LL-helper-resources.sh",
+				"${PODS_ROOT}/LPDQuoteImagesView/LPDQuoteImagesView/Assets/LPDImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LPDImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -290,11 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552D55FE20B659AC00642DF9 /* AutoTextView.m in Sources */,
 				5563795820B45C5F009753F1 /* ViewController.m in Sources */,
 				552D55F620B5451C00642DF9 /* CategoryManager.m in Sources */,
 				552D55F220B5052600642DF9 /* Category.m in Sources */,
 				552D55EE20B4FFC200642DF9 /* CategoryView.m in Sources */,
 				5563795E20B45C5F009753F1 /* LL_helper.xcdatamodeld in Sources */,
+				552D55F920B54D8100642DF9 /* UploadViewController.m in Sources */,
 				5563796620B45C5F009753F1 /* main.m in Sources */,
 				5563795520B45C5F009753F1 /* AppDelegate.m in Sources */,
 			);
