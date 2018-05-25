@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import <Masonry.h>
+#import <LPDQuoteImagesView.h>
 
-@interface ViewController ()
+@interface ViewController ()<LPDImagePickerControllerDelegate>
 @property (assign, nonatomic) CGFloat topMargin;
 @end
 
@@ -24,8 +25,16 @@
 }
 
 - (void)showUploadView {
+    LPDImagePickerController *pickerVC = [[LPDImagePickerController alloc] initWithMaxImagesCount:9 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
+    pickerVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    pickerVC.allowPickingVideo = NO;
+    pickerVC.allowPickingOriginalPhoto = NO;
+    pickerVC.sortAscendingByModificationDate = NO;
+
     UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadViewController"];
-    [self presentViewController:vc animated:true completion:nil];
+    pickerVC.modaledVC = vc;
+    
+    [self presentViewController:pickerVC animated:YES completion:nil];
 }
 
 - (void)uploadButton {

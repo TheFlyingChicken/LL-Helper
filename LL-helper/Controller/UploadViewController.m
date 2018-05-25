@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
 @property (weak, nonatomic) IBOutlet AutoTextView* textview;
-
+@property (strong, nonatomic) LPDQuoteImagesView *imageArea;
 @end
 
 @implementation UploadViewController
@@ -28,27 +28,54 @@
         _textViewHeight.constant = height;
     };
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setupSelectedPhotos:) name:@"SelectedPhotosAndAssets" object:nil];
     
-    [self imageArea];
+    [self setupImageArea];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"SelectedPhotosAndAssets" object:nil];
 }
 
 - (IBAction)upload:(id)sender {
 }
 
 - (IBAction)dismiss:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
+    UIViewController * presentingViewController = self.presentingViewController;
+    do {
+        if ([presentingViewController isKindOfClass:[ViewController class]]) {
+            break;
+        }
+        presentingViewController = presentingViewController.presentingViewController;
+        
+    } while (presentingViewController.presentingViewController);
+    
+    [presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)imageArea {
+- (void)setupImageArea {
     CGFloat screenWidth = [[UIScreen mainScreen]bounds].size.width;
     CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
     
-    LPDQuoteImagesView *imageArea =[[LPDQuoteImagesView alloc] initWithFrame:CGRectMake(20, screenHeight-(screenWidth-40)-10, screenWidth - 40, screenWidth-40) withCountPerRowInView:3 cellMargin:12];
+    _imageArea =[[LPDQuoteImagesView alloc] initWithFrame:CGRectMake(20, screenHeight-(screenWidth-40)-10, screenWidth - 40, screenWidth-40) withCountPerRowInView:3 cellMargin:12];
+    
+    _imageArea.maxSelectedCount = 9;
+    _imageArea.collectionView.scrollEnabled = NO;
+    _imageArea.navcDelegate = self;
+    [self.scrollView addSubview:_imageArea];
+}
 
-    imageArea.maxSelectedCount = 9;
-    imageArea.collectionView.scrollEnabled = NO;
-    imageArea.navcDelegate = self;
-    [self.scrollView addSubview:imageArea];
+- (void)setupSelectedPhotos: (nullable NSNotification *)noti {
+    NSDictionary *info = [noti userInfo];
+    
+    NSMutableArray *assets = info[@"assets"];
+    NSMutableArray *photos = info[@"photos"];
+
+    _imageArea.selectedPhotos = photos;
+    _imageArea.selectedAssets = assets;
+    [_imageArea.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
