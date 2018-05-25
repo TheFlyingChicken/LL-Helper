@@ -7,7 +7,6 @@
 //
 
 #import "CategoryManager.h"
-#import "Category.h"
 
 @implementation CategoryManager
 

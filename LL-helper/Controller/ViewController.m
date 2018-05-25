@@ -7,10 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "Category.h"
 #import <Masonry.h>
-#import "CategoryView.h"
-#import "CategoryManager.h"
 
 @interface ViewController ()
 @property (assign, nonatomic) CGFloat topMargin;

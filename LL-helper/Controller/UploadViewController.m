@@ -7,8 +7,7 @@
 //
 
 #import "UploadViewController.h"
-#import "LPDQuoteImagesView.h"
-#import "AutoTextView.h"
+#import <LPDQuoteImagesView/LPDQuoteImagesView.h>
 
 @interface UploadViewController ()<LPDQuoteImagesViewDelegate>
 
