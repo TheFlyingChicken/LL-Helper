@@ -41,15 +41,18 @@
 
 - (void)setup
 {
+    self.placeholderView.frame = self.bounds;
+    
     self.textHeight = self.frame.size.height;
     
     self.scrollEnabled = NO;
     self.scrollsToTop = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.enablesReturnKeyAutomatically = YES;
-    self.layer.borderWidth = 1;
-
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+//    self.layer.borderWidth = 1;
+//    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
 }
 
@@ -84,7 +87,6 @@
         if (_textViewBlock && self.scrollEnabled == NO) {
             _textViewBlock(self.text, height);
             [self.superview layoutIfNeeded];
-            self.placeholderView.frame = self.bounds;
         }
     }
 }

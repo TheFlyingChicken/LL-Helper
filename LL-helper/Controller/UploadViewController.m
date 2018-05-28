@@ -9,6 +9,8 @@
 #import "UploadViewController.h"
 #import <LPDQuoteImagesView/LPDQuoteImagesView.h>
 
+#define screenWidth [[UIScreen mainScreen]bounds].size.width
+
 @interface UploadViewController ()<LPDQuoteImagesViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -23,9 +25,12 @@
     [super viewDidLoad];
     
     _textview.placeholder = @"输入";
-    _textview.maxLineCount = 12;
+    _textview.maxLineCount = 6;
     _textview.textViewBlock = ^(NSString *text,CGFloat height){
         _textViewHeight.constant = height;
+        CGRect imageAreaFrame = _imageArea.frame;
+        imageAreaFrame.origin.y = [self getImageAreaOriginY:height];
+        _imageArea.frame = imageAreaFrame;
     };
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(setupSelectedPhotos:) name:@"SelectedPhotosAndAssets" object:nil];
@@ -56,10 +61,9 @@
 }
 
 - (void)setupImageArea {
-    CGFloat screenWidth = [[UIScreen mainScreen]bounds].size.width;
-    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
+    CGFloat imageAreaY =  [self getImageAreaOriginY:_textview.frame.size.height];
     
-    _imageArea =[[LPDQuoteImagesView alloc] initWithFrame:CGRectMake(20, screenHeight-(screenWidth-40)-10, screenWidth - 40, screenWidth-40) withCountPerRowInView:3 cellMargin:12];
+    _imageArea =[[LPDQuoteImagesView alloc] initWithFrame:CGRectMake(20, imageAreaY, screenWidth - 40, screenWidth-40) withCountPerRowInView:3 cellMargin:12];
     
     _imageArea.maxSelectedCount = 9;
     _imageArea.collectionView.scrollEnabled = NO;
@@ -76,6 +80,10 @@
     _imageArea.selectedPhotos = photos;
     _imageArea.selectedAssets = assets;
     [_imageArea.collectionView reloadData];
+}
+
+- (CGFloat)getImageAreaOriginY: (CGFloat)height {
+    return _textview.frame.origin.y + height + 20;// 20 is Margin
 }
 
 - (void)didReceiveMemoryWarning {
