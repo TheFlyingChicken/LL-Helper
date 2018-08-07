@@ -15,6 +15,9 @@
 		552D55FE20B659AC00642DF9 /* AutoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55FD20B659AC00642DF9 /* AutoTextView.m */; };
 		552E733520BBFE99005D7E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552E733320BBFE99005D7E63 /* LaunchScreen.storyboard */; };
 		552E733720BC00D6005D7E63 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 552E733620BC00D6005D7E63 /* launch.png */; };
+		552E733A20BC04A6005D7E63 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E733920BC04A6005D7E63 /* ListViewController.m */; };
+		552E734020BC0520005D7E63 /* CardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E733E20BC0520005D7E63 /* CardCollectionViewCell.m */; };
+		552E734120BC0520005D7E63 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552E733F20BC0520005D7E63 /* CardCollectionViewCell.xib */; };
 		5563795520B45C5F009753F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563795420B45C5F009753F1 /* AppDelegate.m */; };
 		5563795820B45C5F009753F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563795720B45C5F009753F1 /* ViewController.m */; };
 		5563795B20B45C5F009753F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5563795920B45C5F009753F1 /* Main.storyboard */; };
@@ -38,6 +41,11 @@
 		552D55FD20B659AC00642DF9 /* AutoTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoTextView.m; sourceTree = "<group>"; };
 		552E733420BBFE99005D7E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552E733620BC00D6005D7E63 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		552E733820BC04A6005D7E63 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		552E733920BC04A6005D7E63 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		552E733D20BC0520005D7E63 /* CardCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardCollectionViewCell.h; path = "LL-helper/Cell/CardCollectionViewCell.h"; sourceTree = SOURCE_ROOT; };
+		552E733E20BC0520005D7E63 /* CardCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardCollectionViewCell.m; path = "LL-helper/Cell/CardCollectionViewCell.m"; sourceTree = SOURCE_ROOT; };
+		552E733F20BC0520005D7E63 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CardCollectionViewCell.xib; path = "LL-helper/Cell/CardCollectionViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		5563795020B45C5F009753F1 /* LL-helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LL-helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5563795320B45C5F009753F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5563795420B45C5F009753F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		552E733C20BC04D4005D7E63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				552E733D20BC0520005D7E63 /* CardCollectionViewCell.h */,
+				552E733E20BC0520005D7E63 /* CardCollectionViewCell.m */,
+				552E733F20BC0520005D7E63 /* CardCollectionViewCell.xib */,
+			);
+			name = Cell;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		5563794720B45C5F009753F1 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +148,7 @@
 				55DA3A3320B7AA370012EBA1 /* PrefixHeader.pch */,
 				552D55F320B544B800642DF9 /* Manager */,
 				552D55FB20B6591B00642DF9 /* View */,
+				552E733C20BC04D4005D7E63 /* Cell */,
 				552D55EF20B5050C00642DF9 /* Model */,
 				5563796E20B45DA6009753F1 /* Controller */,
 				5563796D20B45D93009753F1 /* Delegate */,
@@ -166,6 +186,8 @@
 				5563795720B45C5F009753F1 /* ViewController.m */,
 				552D55F720B54D8000642DF9 /* UploadViewController.h */,
 				552D55F820B54D8000642DF9 /* UploadViewController.m */,
+				552E733820BC04A6005D7E63 /* ListViewController.h */,
+				552E733920BC04A6005D7E63 /* ListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +274,7 @@
 				552E733720BC00D6005D7E63 /* launch.png in Resources */,
 				552D55EB20B4FFA900642DF9 /* CategoryView.xib in Resources */,
 				552E733520BBFE99005D7E63 /* LaunchScreen.storyboard in Resources */,
+				552E734120BC0520005D7E63 /* CardCollectionViewCell.xib in Resources */,
 				5563795B20B45C5F009753F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552E733A20BC04A6005D7E63 /* ListViewController.m in Sources */,
 				552D55FE20B659AC00642DF9 /* AutoTextView.m in Sources */,
 				5563795820B45C5F009753F1 /* ViewController.m in Sources */,
 				552D55F620B5451C00642DF9 /* CategoryManager.m in Sources */,
@@ -326,6 +350,7 @@
 				552D55F920B54D8100642DF9 /* UploadViewController.m in Sources */,
 				5563796620B45C5F009753F1 /* main.m in Sources */,
 				5563795520B45C5F009753F1 /* AppDelegate.m in Sources */,
+				552E734020BC0520005D7E63 /* CardCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
