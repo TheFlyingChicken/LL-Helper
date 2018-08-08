@@ -7,7 +7,7 @@
 //
 
 #import "ListViewController.h"
-#define HB_Color(r,g,b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
+
 @interface ListViewController ()
 @property (strong, nonatomic) UIButton *btn_dismiss;
 @property (strong, nonatomic) UILabel *lbl_title;
@@ -58,8 +58,8 @@
         _lbl_title = [UILabel new];
         _lbl_title.textAlignment = NSTextAlignmentCenter;
         _lbl_title.text = _category.name;
-        _lbl_title.font = [UIFont fontWithName:@"FZSEJW--GB1-0" size:20];
-        _lbl_title.textColor = HB_Color(236, 91, 49);
+        _lbl_title.font = [UIFont LLFontOfSize: 20];
+        _lbl_title.textColor = [UIColor LLColorWithR:236 G:91 B:49];
     }
     return _lbl_title;
 }
