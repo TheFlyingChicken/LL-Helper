@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "CircleLayout.h"
 
 @interface ListViewController ()
 @property (strong, nonatomic) UIButton *btn_dismiss;
@@ -35,6 +36,19 @@
         make.height.mas_equalTo(self.btn_dismiss);
         make.left.mas_equalTo(self.btn_dismiss.mas_right).offset(20);
     }];
+    
+    CircleLayout *layout = [CircleLayout new];
+    LLCollectionView *view = [[LLCollectionView alloc]initWithLayout:layout];
+    [self.view addSubview:view];
+    [view setData:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"]];
+    [view registerCell];
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.lbl_title.mas_bottom).offset(50);
+        make.right.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view);
+        make.height.mas_equalTo(CGRectGetWidth(self.view.frame));
+    }];
 }
 
 
@@ -59,7 +73,7 @@
         _lbl_title.textAlignment = NSTextAlignmentCenter;
         _lbl_title.text = _category.name;
         _lbl_title.font = [UIFont LLFontOfSize: 20];
-        _lbl_title.textColor = [UIColor LLColorWithR:236 G:91 B:49];
+        _lbl_title.textColor = [UIColor colorWithR:236 G:91 B:49];
     }
     return _lbl_title;
 }

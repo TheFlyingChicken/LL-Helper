@@ -10,6 +10,8 @@
 
 @interface UIColor (LLColor)
 
-+ (instancetype)LLColorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue;
++ (instancetype)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue;
+
++ (instancetype)colorWithHexString: (NSString *)color;
 
 @end

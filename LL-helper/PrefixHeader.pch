@@ -15,6 +15,12 @@
 /* View */
 #import "AutoTextView.h"
 #import "CategoryView.h"
+#import "LLCollectionView.h"
+
+/* Cell */
+#import "LLBaseCollectionViewCell.h"
+#import "BrandCollectionCell.h"
+
 
 /* Model */
 #import "Category.h"

@@ -23,9 +23,11 @@
 		5563796020B45C5F009753F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5563795F20B45C5F009753F1 /* Assets.xcassets */; };
 		5563796620B45C5F009753F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563796520B45C5F009753F1 /* main.m */; };
 		55A1580B211A8B400039CE03 /* UIFont+LLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1580A211A8B400039CE03 /* UIFont+LLFont.m */; };
-		55A15810211A8B980039CE03 /* CardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1580E211A8B980039CE03 /* CardCollectionViewCell.m */; };
-		55A15811211A8B980039CE03 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A1580F211A8B980039CE03 /* CardCollectionViewCell.xib */; };
 		55A15814211A8E270039CE03 /* UIColor+LLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A15813211A8E270039CE03 /* UIColor+LLColor.m */; };
+		55A15817211A8FF10039CE03 /* LLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A15816211A8FF10039CE03 /* LLCollectionView.m */; };
+		55A1581A211A986C0039CE03 /* LLBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A15819211A986C0039CE03 /* LLBaseCollectionViewCell.m */; };
+		55A1581D211A98D40039CE03 /* BrandCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1581C211A98D40039CE03 /* BrandCollectionCell.m */; };
+		55A15820211ABA120039CE03 /* CircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1581F211ABA120039CE03 /* CircleLayout.m */; };
 		C6A8515106978F944F0EDCBC /* libPods-LL-helper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 578FFF5884C6D73B5EA7A951 /* libPods-LL-helper.a */; };
 /* End PBXBuildFile section */
 
@@ -57,11 +59,16 @@
 		5563796520B45C5F009753F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55A15809211A8B400039CE03 /* UIFont+LLFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+LLFont.h"; sourceTree = "<group>"; };
 		55A1580A211A8B400039CE03 /* UIFont+LLFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+LLFont.m"; sourceTree = "<group>"; };
-		55A1580D211A8B980039CE03 /* CardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCollectionViewCell.h; sourceTree = "<group>"; };
-		55A1580E211A8B980039CE03 /* CardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCollectionViewCell.m; sourceTree = "<group>"; };
-		55A1580F211A8B980039CE03 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		55A15812211A8E270039CE03 /* UIColor+LLColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LLColor.h"; sourceTree = "<group>"; };
 		55A15813211A8E270039CE03 /* UIColor+LLColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LLColor.m"; sourceTree = "<group>"; };
+		55A15815211A8FF10039CE03 /* LLCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLCollectionView.h; sourceTree = "<group>"; };
+		55A15816211A8FF10039CE03 /* LLCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLCollectionView.m; sourceTree = "<group>"; };
+		55A15818211A986C0039CE03 /* LLBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		55A15819211A986C0039CE03 /* LLBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		55A1581B211A98D40039CE03 /* BrandCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrandCollectionCell.h; sourceTree = "<group>"; };
+		55A1581C211A98D40039CE03 /* BrandCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrandCollectionCell.m; sourceTree = "<group>"; };
+		55A1581E211ABA120039CE03 /* CircleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleLayout.h; sourceTree = "<group>"; };
+		55A1581F211ABA120039CE03 /* CircleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleLayout.m; sourceTree = "<group>"; };
 		55DA3A3320B7AA370012EBA1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		578FFF5884C6D73B5EA7A951 /* libPods-LL-helper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LL-helper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DED87DDBC9419EB74811B7 /* Pods-LL-helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LL-helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LL-helper/Pods-LL-helper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +92,8 @@
 			children = (
 				552D55F020B5052600642DF9 /* Category.h */,
 				552D55F120B5052600642DF9 /* Category.m */,
+				55A1581E211ABA120039CE03 /* CircleLayout.h */,
+				55A1581F211ABA120039CE03 /* CircleLayout.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +115,8 @@
 				552D55EC20B4FFC200642DF9 /* CategoryView.h */,
 				552D55ED20B4FFC200642DF9 /* CategoryView.m */,
 				552D55EA20B4FFA900642DF9 /* CategoryView.xib */,
+				55A15815211A8FF10039CE03 /* LLCollectionView.h */,
+				55A15816211A8FF10039CE03 /* LLCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,9 +205,10 @@
 		55A1580C211A8B980039CE03 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				55A1580D211A8B980039CE03 /* CardCollectionViewCell.h */,
-				55A1580E211A8B980039CE03 /* CardCollectionViewCell.m */,
-				55A1580F211A8B980039CE03 /* CardCollectionViewCell.xib */,
+				55A15818211A986C0039CE03 /* LLBaseCollectionViewCell.h */,
+				55A15819211A986C0039CE03 /* LLBaseCollectionViewCell.m */,
+				55A1581B211A98D40039CE03 /* BrandCollectionCell.h */,
+				55A1581C211A98D40039CE03 /* BrandCollectionCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -282,7 +294,6 @@
 				552E733720BC00D6005D7E63 /* launch.png in Resources */,
 				552D55EB20B4FFA900642DF9 /* CategoryView.xib in Resources */,
 				552E733520BBFE99005D7E63 /* LaunchScreen.storyboard in Resources */,
-				55A15811211A8B980039CE03 /* CardCollectionViewCell.xib in Resources */,
 				5563795B20B45C5F009753F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,19 +344,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A15817211A8FF10039CE03 /* LLCollectionView.m in Sources */,
 				552E733A20BC04A6005D7E63 /* ListViewController.m in Sources */,
 				552D55FE20B659AC00642DF9 /* AutoTextView.m in Sources */,
+				55A1581D211A98D40039CE03 /* BrandCollectionCell.m in Sources */,
 				5563795820B45C5F009753F1 /* ViewController.m in Sources */,
 				552D55F620B5451C00642DF9 /* CategoryManager.m in Sources */,
-				55A15810211A8B980039CE03 /* CardCollectionViewCell.m in Sources */,
 				552D55F220B5052600642DF9 /* Category.m in Sources */,
 				552D55EE20B4FFC200642DF9 /* CategoryView.m in Sources */,
 				55A15814211A8E270039CE03 /* UIColor+LLColor.m in Sources */,
 				5563795E20B45C5F009753F1 /* LL_helper.xcdatamodeld in Sources */,
 				552D55F920B54D8100642DF9 /* UploadViewController.m in Sources */,
 				5563796620B45C5F009753F1 /* main.m in Sources */,
+				55A1581A211A986C0039CE03 /* LLBaseCollectionViewCell.m in Sources */,
 				55A1580B211A8B400039CE03 /* UIFont+LLFont.m in Sources */,
 				5563795520B45C5F009753F1 /* AppDelegate.m in Sources */,
+				55A15820211ABA120039CE03 /* CircleLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
