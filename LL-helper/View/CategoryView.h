@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "Category.h"
 
+
+@protocol CategoryDelegate<NSObject>
+- (void)didSelectCategory: (Category *)category;
+
+@end
+
+
+
 @interface CategoryView : UIView
+
+@property (weak, nonatomic) id<CategoryDelegate> delegate;
 
 - (void)setInfo: (Category*)category;
 

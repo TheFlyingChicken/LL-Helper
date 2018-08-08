@@ -7,10 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <Masonry.h>
-#import <LPDQuoteImagesView.h>
 
-@interface ViewController ()<LPDImagePickerControllerDelegate>
+@interface ViewController ()<LPDImagePickerControllerDelegate, CategoryDelegate>
 @property (assign, nonatomic) CGFloat topMargin;
 @end
 
@@ -18,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     [self iconLine1];
     [self iconLine2];
     [self uploadButton];
@@ -58,6 +56,12 @@
     [upload addTarget:self action:@selector(showUploadView) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)didSelectCategory:(Category *)category {
+    ListViewController *vc = [ListViewController new];
+    vc.category = category;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)iconLine1 {
     NSArray* list = [CategoryManager categoryLine1];
     NSArray* array = [self getGategoryViews:list];
@@ -89,6 +93,7 @@
     for (Category* item in list) {
         CategoryView* view = [[[NSBundle mainBundle]loadNibNamed:@"CategoryView" owner:self options:nil]firstObject];
         [self.view addSubview:view];
+        [view setDelegate:self];
         [view setInfo:item];
         [array addObject:view];
     }

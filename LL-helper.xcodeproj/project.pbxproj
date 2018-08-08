@@ -74,16 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		552D55E920B4FF7B00642DF9 /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-				552D55EA20B4FFA900642DF9 /* CategoryView.xib */,
-				552D55EC20B4FFC200642DF9 /* CategoryView.h */,
-				552D55ED20B4FFC200642DF9 /* CategoryView.m */,
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
 		552D55EF20B5050C00642DF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +97,9 @@
 			children = (
 				552D55FC20B659AC00642DF9 /* AutoTextView.h */,
 				552D55FD20B659AC00642DF9 /* AutoTextView.m */,
+				552D55EC20B4FFC200642DF9 /* CategoryView.h */,
+				552D55ED20B4FFC200642DF9 /* CategoryView.m */,
+				552D55EA20B4FFA900642DF9 /* CategoryView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,7 +145,6 @@
 				552D55EF20B5050C00642DF9 /* Model */,
 				5563796E20B45DA6009753F1 /* Controller */,
 				5563796D20B45D93009753F1 /* Delegate */,
-				552D55E920B4FF7B00642DF9 /* Xib */,
 				5563796C20B45D65009753F1 /* Others */,
 			);
 			path = "LL-helper";
@@ -220,7 +212,6 @@
 				5563794C20B45C5F009753F1 /* Sources */,
 				5563794D20B45C5F009753F1 /* Frameworks */,
 				5563794E20B45C5F009753F1 /* Resources */,
-				272B04622C873959F0CE9799 /* [CP] Embed Pods Frameworks */,
 				AD0A22214D12D77ED66C1DCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -298,21 +289,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		272B04622C873959F0CE9799 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LL-helper/Pods-LL-helper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AD0A22214D12D77ED66C1DCB /* [CP] Copy Pods Resources */ = {
