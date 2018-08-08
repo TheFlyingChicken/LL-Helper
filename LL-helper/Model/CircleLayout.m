@@ -27,7 +27,7 @@
     CGFloat height = CGRectGetHeight(self.collectionView.bounds);
     
     _center = CGPointMake(width*0.5, height*0.5);
-    _radius = MIN(width, height)/3.0;
+    _radius = MIN(width, height)/2.6;
     
     for (NSInteger i = 0; i < _count; i++) {
         NSIndexPath *index = [NSIndexPath indexPathForItem:i inSection:0];
@@ -43,7 +43,7 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    attributes.size = CGSizeMake(80, 80);
+    attributes.size = CGSizeMake(55, 75);
     
     CGFloat angle = 2 * M_PI * indexPath.row / _count;
     attributes.center = CGPointMake(_center.x + _radius*cos(angle), _center.y + _radius*sin(angle));

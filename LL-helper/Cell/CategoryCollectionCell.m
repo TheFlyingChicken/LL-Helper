@@ -37,7 +37,7 @@
         make.top.mas_equalTo(self);
         make.left.mas_equalTo(self);
         make.right.mas_equalTo(self);
-        make.bottom.mas_equalTo(self);
+        make.height.mas_equalTo(_imageView.mas_width);
     }];
     
     [self.lbl_title mas_makeConstraints:^(MASConstraintMaker *make) {
