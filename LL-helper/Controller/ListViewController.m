@@ -41,7 +41,7 @@
     LLCollectionView *view = [[LLCollectionView alloc]initWithLayout:layout];
     [self.view addSubview:view];
     [view setData:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"]];
-    [view registerCell];
+    [view registerCell:NSStringFromClass([BrandCollectionCell class])];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.lbl_title.mas_bottom).offset(50);

@@ -9,11 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "LLBaseCollectionViewCell.h"
 
+@protocol LLCollectionViewDelegate<NSObject>
+- (void)didSelectItemAt: (NSIndexPath *)index entity: (id)entity;
+
+@end
+
 @interface LLCollectionView : UIView
+
+@property (weak, nonatomic) id<LLCollectionViewDelegate> delegate;
 
 - (instancetype)initWithLayout: (UICollectionViewLayout *)layout;
 
 - (void)setData: (NSArray *)array;
-//- (void)registerCell: (Class *)cellClass;
-- (void)registerCell;
+- (void)registerCell: (NSString *)cellClass;
+
 @end

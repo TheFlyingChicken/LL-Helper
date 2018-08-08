@@ -10,6 +10,7 @@
 
 @interface CategoryManager : NSObject
 
-+ (NSArray*)categoryLine1;
-+ (NSArray*)categoryLine2;
++ (NSArray*)categories;
+
+
 @end

@@ -43,7 +43,7 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    attributes.size = CGSizeMake(60, 60);
+    attributes.size = CGSizeMake(80, 80);
     
     CGFloat angle = 2 * M_PI * indexPath.row / _count;
     attributes.center = CGPointMake(_center.x + _radius*cos(angle), _center.y + _radius*sin(angle));

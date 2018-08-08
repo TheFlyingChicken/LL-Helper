@@ -13,7 +13,7 @@
 @property (strong, nonatomic) UICollectionView *collectionView;
 
 @property (strong, nonatomic) NSArray *dataArray;
-
+@property (strong, nonatomic) NSString *CellID;
 @end
 
 @implementation LLCollectionView
@@ -47,8 +47,11 @@
     [self.collectionView reloadData];
 }
 
-- (void)registerCell {//}:(LLBaseCollectionViewCell *)cellClass {
-    [_collectionView registerClass:[BrandCollectionCell class] forCellWithReuseIdentifier:@"collectionViewCell"];
+
+- (void)registerCell:(NSString *)cellClass {
+    _CellID = cellClass;
+    Class class = NSClassFromString(cellClass);
+    [_collectionView registerClass:class forCellWithReuseIdentifier:_CellID];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -56,10 +59,16 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BrandCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell" forIndexPath:indexPath];
+    LLBaseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_CellID forIndexPath:indexPath];
     id entity = [self.dataArray objectAtIndex:indexPath.item];
     [cell setCellInfo:entity];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(didSelectItemAt:entity:)]) {
+        [self.delegate didSelectItemAt:indexPath entity:[self.dataArray objectAtIndex:indexPath.item]];
+    }
 }
 
 @end
