@@ -11,6 +11,9 @@
 
 @interface BrandCollectionCell()
 @property (strong, nonatomic) UILabel *lbl_title;
+@property (strong, nonatomic) UIImageView *imageView;
+
+@property (strong, nonatomic) LLBrand *brand;
 @end
 
 @implementation BrandCollectionCell
@@ -20,6 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.lbl_title];
+        [self addSubview:self.imageView];
         
         self.backgroundColor = [UIColor colorWithHexString:@"EEDFCC"];
     }
@@ -30,8 +34,15 @@
 {
     [super layoutSubviews];
     
-    [self.lbl_title mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self);
+        make.left.mas_equalTo(self);
+        make.right.mas_equalTo(self);
+        make.bottom.mas_equalTo(self);
+    }];
+    
+    [self.lbl_title mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(20);
         make.left.mas_equalTo(self);
         make.right.mas_equalTo(self);
         make.bottom.mas_equalTo(self);
@@ -39,10 +50,10 @@
  }
 
 - (void)setCellInfo:(id)entity {
-    NSLog(@"%@", entity);
+    _brand = (LLBrand *)entity;
     
-    NSString *num = (NSString *)entity;
-    self.lbl_title.text = num;
+    self.lbl_title.text = _brand.name;
+    [self.imageView sd_setImageWithURL:_brand.imageUrl];
 }
 
 - (UILabel *)lbl_title {
@@ -57,4 +68,12 @@
     return _lbl_title;
 }
 
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [UIImageView new];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _imageView;
+}
+    
 @end

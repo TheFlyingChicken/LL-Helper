@@ -13,7 +13,7 @@
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UILabel *lbl_title;
 
-@property (strong, nonatomic) Category *category;
+@property (strong, nonatomic) LLCategory *category;
 @end
 
 
@@ -50,7 +50,7 @@
 
 #pragma mark - Action
 - (void)setCellInfo:(id)entity {
-    _category = (Category *)entity;
+    _category = (LLCategory *)entity;
     [self.imageView setImage:[UIImage imageNamed:_category.image_url]];
     self.lbl_title.text = _category.name;
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		552D55F220B5052600642DF9 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55F120B5052600642DF9 /* Category.m */; };
 		552D55F620B5451C00642DF9 /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55F520B5451C00642DF9 /* CategoryManager.m */; };
 		552D55F920B54D8100642DF9 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55F820B54D8000642DF9 /* UploadViewController.m */; };
 		552D55FE20B659AC00642DF9 /* AutoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D55FD20B659AC00642DF9 /* AutoTextView.m */; };
@@ -20,6 +19,8 @@
 		5563795E20B45C5F009753F1 /* LL_helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5563795C20B45C5F009753F1 /* LL_helper.xcdatamodeld */; };
 		5563796020B45C5F009753F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5563795F20B45C5F009753F1 /* Assets.xcassets */; };
 		5563796620B45C5F009753F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5563796520B45C5F009753F1 /* main.m */; };
+		5574AADC211C178100ACD190 /* LLBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5574AADB211C178100ACD190 /* LLBrand.m */; };
+		5574AADF211C1CB300ACD190 /* LLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5574AADE211C1CB300ACD190 /* LLCategory.m */; };
 		55A1580B211A8B400039CE03 /* UIFont+LLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1580A211A8B400039CE03 /* UIFont+LLFont.m */; };
 		55A15814211A8E270039CE03 /* UIColor+LLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A15813211A8E270039CE03 /* UIColor+LLColor.m */; };
 		55A15817211A8FF10039CE03 /* LLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A15816211A8FF10039CE03 /* LLCollectionView.m */; };
@@ -31,8 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		552D55F020B5052600642DF9 /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		552D55F120B5052600642DF9 /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		552D55F420B5451C00642DF9 /* CategoryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryManager.h; sourceTree = "<group>"; };
 		552D55F520B5451C00642DF9 /* CategoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		552D55F720B54D8000642DF9 /* UploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
@@ -53,6 +52,10 @@
 		5563795F20B45C5F009753F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5563796420B45C5F009753F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5563796520B45C5F009753F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5574AADA211C178100ACD190 /* LLBrand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBrand.h; sourceTree = "<group>"; };
+		5574AADB211C178100ACD190 /* LLBrand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBrand.m; sourceTree = "<group>"; };
+		5574AADD211C1CB300ACD190 /* LLCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLCategory.h; sourceTree = "<group>"; };
+		5574AADE211C1CB300ACD190 /* LLCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLCategory.m; sourceTree = "<group>"; };
 		55A15809211A8B400039CE03 /* UIFont+LLFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+LLFont.h"; sourceTree = "<group>"; };
 		55A1580A211A8B400039CE03 /* UIFont+LLFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+LLFont.m"; sourceTree = "<group>"; };
 		55A15812211A8E270039CE03 /* UIColor+LLColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LLColor.h"; sourceTree = "<group>"; };
@@ -88,8 +91,10 @@
 		552D55EF20B5050C00642DF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				552D55F020B5052600642DF9 /* Category.h */,
-				552D55F120B5052600642DF9 /* Category.m */,
+				5574AADD211C1CB300ACD190 /* LLCategory.h */,
+				5574AADE211C1CB300ACD190 /* LLCategory.m */,
+				5574AADA211C178100ACD190 /* LLBrand.h */,
+				5574AADB211C178100ACD190 /* LLBrand.m */,
 				55A1581E211ABA120039CE03 /* CircleLayout.h */,
 				55A1581F211ABA120039CE03 /* CircleLayout.m */,
 			);
@@ -202,10 +207,10 @@
 			children = (
 				55A15818211A986C0039CE03 /* LLBaseCollectionViewCell.h */,
 				55A15819211A986C0039CE03 /* LLBaseCollectionViewCell.m */,
-				55A1581B211A98D40039CE03 /* BrandCollectionCell.h */,
-				55A1581C211A98D40039CE03 /* BrandCollectionCell.m */,
 				55A15821211AD57D0039CE03 /* CategoryCollectionCell.h */,
 				55A15822211AD57D0039CE03 /* CategoryCollectionCell.m */,
+				55A1581B211A98D40039CE03 /* BrandCollectionCell.h */,
+				55A1581C211A98D40039CE03 /* BrandCollectionCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -347,13 +352,14 @@
 				55A1581D211A98D40039CE03 /* BrandCollectionCell.m in Sources */,
 				5563795820B45C5F009753F1 /* ViewController.m in Sources */,
 				552D55F620B5451C00642DF9 /* CategoryManager.m in Sources */,
-				552D55F220B5052600642DF9 /* Category.m in Sources */,
 				55A15814211A8E270039CE03 /* UIColor+LLColor.m in Sources */,
 				5563795E20B45C5F009753F1 /* LL_helper.xcdatamodeld in Sources */,
 				552D55F920B54D8100642DF9 /* UploadViewController.m in Sources */,
 				5563796620B45C5F009753F1 /* main.m in Sources */,
 				55A1581A211A986C0039CE03 /* LLBaseCollectionViewCell.m in Sources */,
 				55A1580B211A8B400039CE03 /* UIFont+LLFont.m in Sources */,
+				5574AADC211C178100ACD190 /* LLBrand.m in Sources */,
+				5574AADF211C1CB300ACD190 /* LLCategory.m in Sources */,
 				5563795520B45C5F009753F1 /* AppDelegate.m in Sources */,
 				55A15820211ABA120039CE03 /* CircleLayout.m in Sources */,
 			);

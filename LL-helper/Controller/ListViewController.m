@@ -9,10 +9,10 @@
 #import "ListViewController.h"
 #import "CircleLayout.h"
 
-@interface ListViewController ()
+@interface ListViewController ()<LLCollectionViewDelegate>
 @property (strong, nonatomic) UIButton *btn_dismiss;
 @property (strong, nonatomic) UILabel *lbl_title;
-
+@property (strong, nonatomic) LLCollectionView *collectionView;
 @end
 
 @implementation ListViewController
@@ -36,18 +36,24 @@
         make.height.mas_equalTo(self.btn_dismiss);
         make.left.mas_equalTo(self.btn_dismiss.mas_right).offset(20);
     }];
-    
-    CircleLayout *layout = [CircleLayout new];
-    LLCollectionView *view = [[LLCollectionView alloc]initWithLayout:layout];
-    [self.view addSubview:view];
-    [view setData:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"]];
-    [view registerCell:NSStringFromClass([BrandCollectionCell class])];
-    
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    [self.view addSubview:self.collectionView];
+    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.lbl_title.mas_bottom).offset(50);
         make.right.mas_equalTo(self.view);
         make.left.mas_equalTo(self.view);
-        make.height.mas_equalTo(CGRectGetWidth(self.view.frame));
+        make.bottom.mas_equalTo(self.view);
+    }];
+    
+    
+    NSString *url = @"https://rajs77wc.qcloud.la/weapp/brand/lasted";
+    [[AFHTTPSessionManager manager] GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *data = [LLBrand modelsFromJSONArray:responseObject[@"data"]];
+        [_collectionView setData:data];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
     }];
 }
 
@@ -55,6 +61,10 @@
 #pragma mark - Action
 - (void)actionDismiss {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)didSelectItemAt:(NSIndexPath *)index entity:(id)entity {
+    
 }
 
 #pragma mark - Getter
@@ -76,6 +86,19 @@
         _lbl_title.textColor = [UIColor colorWithR:236 G:91 B:49];
     }
     return _lbl_title;
+}
+
+- (LLCollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        layout.itemSize = CGSizeMake(180, 240);
+        
+        _collectionView = [[LLCollectionView alloc]initWithLayout:layout];
+        [_collectionView setDelegate:self];
+        [_collectionView registerCell:NSStringFromClass([BrandCollectionCell class])];
+    }
+    return _collectionView;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,16 +14,24 @@
 @property (assign, nonatomic) CGFloat topMargin;
 @property (strong, nonatomic) LLCollectionView *collectionView;
 @property (strong, nonatomic) UIButton *uploadButton;
+@property (strong, nonatomic) UILabel *titleLabel;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.uploadButton];
 
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.top.mas_equalTo(60);
+        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(120);
+    }];
+    
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.view);
         make.right.mas_equalTo(self.view);
@@ -53,11 +61,22 @@
 
 - (void)didSelectItemAt:(NSIndexPath *)index entity:(id)entity {
     ListViewController *vc = [ListViewController new];
-    vc.category = (Category *)entity;
+    vc.category = (LLCategory *)entity;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Getter
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [UILabel new];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.text = @"胖胖管理系统";
+        _titleLabel.font = [UIFont LLFontOfSize: 20];
+        _titleLabel.textColor = [UIColor colorWithR:255 G:35 B:108];
+    }
+    return _titleLabel;
+}
+
 - (UIButton *)uploadButton {
     if (!_uploadButton) {
         _uploadButton = [UIButton buttonWithType:UIButtonTypeCustom];

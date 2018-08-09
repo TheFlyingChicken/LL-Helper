@@ -10,6 +10,6 @@
 
 @interface ListViewController : UIViewController
 
-@property (strong, nonatomic) Category *category;
+@property (strong, nonatomic) LLCategory *category;
 
 @end
